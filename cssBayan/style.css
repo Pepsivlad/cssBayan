@@ -34,33 +34,21 @@ input {
   display: none;
 }
 
-input:checked ~ .tab-label2 > .tab-div,
-.tab-label:hover ~ .tab-label2 > .tab-div,
-.tab-label2:hover > .tab-div {
+input:checked ~ .tab-label2 > .tab-div {
   max-height: 100vh;
   background-color: #12171f;
   transition-delay: 0.1s;
   transition-property: all;
 }
 
-input:checked + .tab-label,
-.tab:hover > .tab-label{
+input:checked + .tab-label {
   background-color: #0f1725;
   border-bottom: 0.04em solid #30363d;
   opacity: 1;
 }
 
-input:checked + .tab-label > .plus,
-.tab:hover > .tab-label > .plus {
+input:checked + .tab-label > .plus {
   transform: rotate(45deg);
-}
-
-.container:hover .tab .tab-label > .plus{
-  opacity: 1;
-}
-
-.container:hover .tab .tab-label {
-  opacity: 1;
 }
 
 .tab {
@@ -77,7 +65,6 @@ input:checked + .tab-label > .plus,
   cursor: pointer;
   transition: 0.3s;
   border-color: #30363d;
-  opacity: 0.3;
 }
 
 .tab-div {
@@ -94,5 +81,40 @@ input:checked + .tab-label > .plus,
 
 .plus {
   transition: 0.3s;
-  opacity: 0;
+}
+
+@media (hover: hover) {
+  .plus {
+    opacity: 0;
+  }
+
+  .tab-label {
+    opacity: 0.3;
+  }
+
+  .tab:hover > .tab-label > .plus {
+    transform: rotate(45deg);
+  }
+
+  .tab:hover > .tab-label {
+    background-color: #0f1725;
+    border-bottom: 0.04em solid #30363d;
+    opacity: 1;
+  }
+
+  .container:hover .tab .tab-label > .plus{
+    opacity: 1;
+  }
+
+  .container:hover .tab .tab-label {
+    opacity: 1;
+  }
+
+  .tab-label:hover ~ .tab-label2 > .tab-div,
+  .tab-label2:hover > .tab-div {
+    max-height: 100vh;
+    background-color: #12171f;
+    transition-delay: 0.1s;
+    transition-property: all;
+  }
 }
