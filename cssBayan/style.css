@@ -39,7 +39,7 @@ input:checked ~ .tab-label2 > .tab-div,
 .tab-label2:hover > .tab-div {
   max-height: 100vh;
   background-color: #12171f;
-  transition-delay: 0.2s;
+  transition-delay: 0.1s;
   transition-property: all;
 }
 
