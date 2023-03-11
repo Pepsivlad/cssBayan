@@ -123,10 +123,18 @@ input:checked + .tab-label > .plus {
   .tab-img {
     width: 40%;
   }
+
+  body {
+    font-size: 2em;
+  }
 }
 
 @media screen and (max-width: 500px) {
   .tab-img {
     width: 50%;
+  }
+
+  body {
+    font-size: 1.3em;
   }
 }
