@@ -34,12 +34,17 @@ input {
   display: none;
 }
 
-input:checked ~ .tab-div {
+input:checked ~ .tab-label2 > .tab-div,
+.tab-label:hover ~ .tab-label2 > .tab-div,
+.tab-label2:hover > .tab-div {
   max-height: 100vh;
   background-color: #12171f;
+  transition-delay: 0.2s;
+  transition-property: all;
 }
 
-input:checked + .tab-label {
+input:checked + .tab-label,
+.tab:hover > .tab-label{
   background-color: #0f1725;
   border-bottom: 0.04em solid #30363d;
 }
@@ -62,10 +67,17 @@ input:checked + .tab-label {
 .tab-div {
   max-height: 0;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .tab-img {
   display: block;
   margin: 0 auto;
-  width: 35%;
+  width: 30%;
+  /* max-height: 0; */
 }
+
+/* input:checked ~ .tab-div > .tab-img,
+.tab-label:hover ~ .tab-div > .tab-img {
+  max-height: 100vh;
+} */
