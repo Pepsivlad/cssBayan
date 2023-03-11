@@ -118,3 +118,15 @@ input:checked + .tab-label > .plus {
     transition-property: all;
   }
 }
+
+@media screen and (max-width: 900px) {
+  .tab-img {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .tab-img {
+    width: 50%;
+  }
+}
