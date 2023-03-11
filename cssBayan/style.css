@@ -20,7 +20,7 @@ body {
 }
 
 h1 {
-  margin-top: 1em;
+  margin-top: 0.2em;
   text-align: center;
 }
 
@@ -49,6 +49,11 @@ input:checked + .tab-label,
   border-bottom: 0.04em solid #30363d;
 }
 
+input:checked + .tab-label > .plus,
+.tab:hover > .tab-label > .plus {
+  transform: rotate(45deg);
+}
+
 .tab {
   overflow: hidden;
   margin: 0.2em 0;
@@ -58,6 +63,7 @@ input:checked + .tab-label,
 
 .tab-label {
   display: flex;
+  justify-content: space-between;
   padding: 0.5em 0.3em;
   cursor: pointer;
   transition: 0.3s;
@@ -74,10 +80,8 @@ input:checked + .tab-label,
   display: block;
   margin: 0 auto;
   width: 30%;
-  /* max-height: 0; */
 }
 
-/* input:checked ~ .tab-div > .tab-img,
-.tab-label:hover ~ .tab-div > .tab-img {
-  max-height: 100vh;
-} */
+.plus {
+  transition: 0.3s;
+}
