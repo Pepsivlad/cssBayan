@@ -1,0 +1,151 @@
+:root {
+  color-scheme: dark;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0d1117;
+  font-family: sans-serif;
+  color: #c9d1d9;
+  font-size: 1.5em;
+}
+
+h1 {
+  margin-top: 0.2em;
+  text-align: center;
+}
+
+.container {
+  margin: auto;
+  max-width: 40em;
+  padding: 0 1em;
+}
+
+input {
+  display: none;
+}
+
+input:checked ~ .tab-label2 > .tab-div {
+  max-height: 100vh;
+  background-color: #12171f;
+  transition-delay: 0.1s;
+  transition-property: all;
+}
+
+input:checked ~ .tab-label2 > .tab-div img {
+  scale: 1;
+}
+
+input:checked + .tab-label {
+  background-color: #0f1725;
+  border-bottom: 0.04em solid #30363d;
+  opacity: 1;
+}
+
+input:checked + .tab-label > .plus {
+  transform: rotate(45deg);
+}
+
+.tab {
+  overflow: hidden;
+  margin: 0.2em 0;
+  border: 0.04em solid #30363d;
+  border-radius: 0.3em;
+}
+
+.tab-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 0.3em;
+  cursor: pointer;
+  transition: 0.3s;
+  border-color: #30363d;
+}
+
+.tab-div {
+  max-height: 0;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.tab-img {
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+  scale: 0.5;
+  transition: 0.3s;
+}
+
+.plus {
+  transition: 0.3s;
+}
+
+@media (hover: hover) {
+  .plus {
+    opacity: 0;
+  }
+
+  .tab-label {
+    opacity: 0.3;
+  }
+
+  .tab:hover > .tab-label > .plus {
+    transform: rotate(45deg);
+  }
+
+  .tab:hover > .tab-label {
+    background-color: #0f1725;
+    border-bottom: 0.04em solid #30363d;
+    opacity: 1;
+  }
+
+  .container:hover .tab .tab-label > .plus{
+    opacity: 1;
+  }
+
+  .container:hover .tab .tab-label {
+    opacity: 1;
+  }
+
+  .tab-label:hover ~ .tab-label2 > .tab-div,
+  .tab-label2:hover > .tab-div {
+    max-height: 100vh;
+    background-color: #12171f;
+    transition-delay: 0.1s;
+    transition-property: all;
+  }
+
+  .tab-label:hover ~ .tab-label2 > .tab-div img,
+  .tab-label2:hover > .tab-div img {
+    scale: 1;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .tab-img {
+    width: 40%;
+  }
+
+  body {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .tab-img {
+    width: 50%;
+  }
+
+  body {
+    font-size: 1.3em;
+  }
+}
