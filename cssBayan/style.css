@@ -41,6 +41,10 @@ input:checked ~ .tab-label2 > .tab-div {
   transition-property: all;
 }
 
+input:checked ~ .tab-label2 > .tab-div img {
+  scale: 1;
+}
+
 input:checked + .tab-label {
   background-color: #0f1725;
   border-bottom: 0.04em solid #30363d;
@@ -77,6 +81,8 @@ input:checked + .tab-label > .plus {
   display: block;
   margin: 0 auto;
   width: 30%;
+  scale: 0.5;
+  transition: 0.3s;
 }
 
 .plus {
@@ -116,6 +122,11 @@ input:checked + .tab-label > .plus {
     background-color: #12171f;
     transition-delay: 0.1s;
     transition-property: all;
+  }
+
+  .tab-label:hover ~ .tab-label2 > .tab-div img,
+  .tab-label2:hover > .tab-div img {
+    scale: 1;
   }
 }
 
